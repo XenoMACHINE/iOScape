@@ -6,7 +6,7 @@ target 'iOScape' do
   use_frameworks!
 
   # Pods for iOScape
-  pod 'SideMenu'
+  pod 'RHSideButtons'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'NVActivityIndicatorView'

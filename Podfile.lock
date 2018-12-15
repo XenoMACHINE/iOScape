@@ -106,13 +106,13 @@ PODS:
     - NVActivityIndicatorView/Presenter (= 4.4.0)
   - NVActivityIndicatorView/Presenter (4.4.0)
   - Protobuf (3.6.1)
-  - SideMenu (5.0.0)
+  - RHSideButtons (1.1.0)
 
 DEPENDENCIES:
   - Firebase/Core
   - Firebase/Firestore
   - NVActivityIndicatorView
-  - SideMenu
+  - RHSideButtons
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -134,7 +134,7 @@ SPEC REPOS:
     - nanopb
     - NVActivityIndicatorView
     - Protobuf
-    - SideMenu
+    - RHSideButtons
 
 SPEC CHECKSUMS:
   BoringSSL: e10f92a27043805c01071fe815a5cd98ae8212e7
@@ -155,8 +155,8 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NVActivityIndicatorView: ec7440a57af2450319d3a4181cca7da6fc127064
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
-  SideMenu: e4303cca3170aff3e1f0ebc44f378cfca6b33fe9
+  RHSideButtons: 9de185791d8119bd1160f6dcb88e47b9ad93d192
 
-PODFILE CHECKSUM: 04b79e20f87cc32c95fbc3142c7127e20a48bb82
+PODFILE CHECKSUM: 39c9ed0acb9c79f8ea429e31ebb93851d814a1c0
 
 COCOAPODS: 1.5.3

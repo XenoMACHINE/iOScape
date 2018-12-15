@@ -8,19 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		0C3FFA4793B50ABCF8ED98E7 /* Pods_iOScape.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C338E841A3A230507284029B /* Pods_iOScape.framework */; };
+		AD5A95DB21C52CC90043DC79 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5A95D921C52CC90043DC79 /* HomeViewController.swift */; };
+		AD5A95DC21C52CC90043DC79 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD5A95DA21C52CC90043DC79 /* HomeViewController.xib */; };
+		AD6D6E2321C51A7900FDC247 /* UsefulExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D6E2221C51A7900FDC247 /* UsefulExtensions.swift */; };
+		AD6D6E2621C51AC900FDC247 /* GlobalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D6E2521C51AC900FDC247 /* GlobalButton.swift */; };
+		AD6D6E2821C51AE900FDC247 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D6E2721C51AE900FDC247 /* Loader.swift */; };
 		ADDBE06321C5166600E7124F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBE06221C5166600E7124F /* AppDelegate.swift */; };
-		ADDBE06521C5166600E7124F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBE06421C5166600E7124F /* ViewController.swift */; };
-		ADDBE06821C5166600E7124F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADDBE06621C5166600E7124F /* Main.storyboard */; };
 		ADDBE06A21C5166700E7124F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADDBE06921C5166700E7124F /* Assets.xcassets */; };
 		ADDBE06D21C5166700E7124F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADDBE06B21C5166700E7124F /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		680BC6DF752D4F6F06F216AD /* Pods-iOScape.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOScape.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOScape/Pods-iOScape.release.xcconfig"; sourceTree = "<group>"; };
+		AD5A95D921C52CC90043DC79 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AD5A95DA21C52CC90043DC79 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		AD6D6E2221C51A7900FDC247 /* UsefulExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsefulExtensions.swift; sourceTree = "<group>"; };
+		AD6D6E2521C51AC900FDC247 /* GlobalButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalButton.swift; sourceTree = "<group>"; };
+		AD6D6E2721C51AE900FDC247 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		ADDBE05F21C5166600E7124F /* iOScape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOScape.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDBE06221C5166600E7124F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ADDBE06421C5166600E7124F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ADDBE06721C5166600E7124F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADDBE06921C5166700E7124F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADDBE06C21C5166700E7124F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADDBE06E21C5166700E7124F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,6 +63,32 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AD5A95D721C52C710043DC79 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AD5A95D821C52CB60043DC79 /* Home */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AD5A95D821C52CB60043DC79 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AD5A95D921C52CC90043DC79 /* HomeViewController.swift */,
+				AD5A95DA21C52CC90043DC79 /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AD6D6E2421C51ABC00FDC247 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				AD6D6E2721C51AE900FDC247 /* Loader.swift */,
+				AD6D6E2521C51AC900FDC247 /* GlobalButton.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
 		ADDBE05621C5166600E7124F = {
 			isa = PBXGroup;
 			children = (
@@ -79,10 +111,11 @@
 			isa = PBXGroup;
 			children = (
 				ADDBE06221C5166600E7124F /* AppDelegate.swift */,
-				ADDBE06421C5166600E7124F /* ViewController.swift */,
-				ADDBE06621C5166600E7124F /* Main.storyboard */,
-				ADDBE06921C5166700E7124F /* Assets.xcassets */,
 				ADDBE06B21C5166700E7124F /* LaunchScreen.storyboard */,
+				ADDBE06921C5166700E7124F /* Assets.xcassets */,
+				AD5A95D721C52C710043DC79 /* Views */,
+				AD6D6E2421C51ABC00FDC247 /* Design */,
+				AD6D6E2221C51A7900FDC247 /* UsefulExtensions.swift */,
 				ADDBE06E21C5166700E7124F /* Info.plist */,
 			);
 			path = iOScape;
@@ -150,7 +183,7 @@
 			files = (
 				ADDBE06D21C5166700E7124F /* LaunchScreen.storyboard in Resources */,
 				ADDBE06A21C5166700E7124F /* Assets.xcassets in Resources */,
-				ADDBE06821C5166600E7124F /* Main.storyboard in Resources */,
+				AD5A95DC21C52CC90043DC79 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +201,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/RHSideButtons/RHSideButtons.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -183,7 +216,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RHSideButtons.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -222,7 +255,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADDBE06521C5166600E7124F /* ViewController.swift in Sources */,
+				AD5A95DB21C52CC90043DC79 /* HomeViewController.swift in Sources */,
+				AD6D6E2321C51A7900FDC247 /* UsefulExtensions.swift in Sources */,
+				AD6D6E2821C51AE900FDC247 /* Loader.swift in Sources */,
+				AD6D6E2621C51AC900FDC247 /* GlobalButton.swift in Sources */,
 				ADDBE06321C5166600E7124F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,14 +266,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		ADDBE06621C5166600E7124F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ADDBE06721C5166600E7124F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ADDBE06B21C5166700E7124F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -376,7 +404,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.goot.iOScape;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -392,7 +420,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.goot.iOScape;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
