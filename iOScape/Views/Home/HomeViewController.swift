@@ -7,13 +7,21 @@
 //
 
 import UIKit
+import RHSideButtons
 
-class HomeViewController: UIViewController {
+class HomeViewController: MenuViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
     }
+    
 
 }

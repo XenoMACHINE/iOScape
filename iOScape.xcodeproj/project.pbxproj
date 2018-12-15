@@ -10,6 +10,7 @@
 		0C3FFA4793B50ABCF8ED98E7 /* Pods_iOScape.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C338E841A3A230507284029B /* Pods_iOScape.framework */; };
 		AD5A95DB21C52CC90043DC79 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5A95D921C52CC90043DC79 /* HomeViewController.swift */; };
 		AD5A95DC21C52CC90043DC79 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD5A95DA21C52CC90043DC79 /* HomeViewController.xib */; };
+		AD5A95E621C5397D0043DC79 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5A95E521C5397D0043DC79 /* MenuViewController.swift */; };
 		AD6D6E2321C51A7900FDC247 /* UsefulExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D6E2221C51A7900FDC247 /* UsefulExtensions.swift */; };
 		AD6D6E2621C51AC900FDC247 /* GlobalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D6E2521C51AC900FDC247 /* GlobalButton.swift */; };
 		AD6D6E2821C51AE900FDC247 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D6E2721C51AE900FDC247 /* Loader.swift */; };
@@ -22,6 +23,7 @@
 		680BC6DF752D4F6F06F216AD /* Pods-iOScape.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOScape.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOScape/Pods-iOScape.release.xcconfig"; sourceTree = "<group>"; };
 		AD5A95D921C52CC90043DC79 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AD5A95DA21C52CC90043DC79 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		AD5A95E521C5397D0043DC79 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		AD6D6E2221C51A7900FDC247 /* UsefulExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsefulExtensions.swift; sourceTree = "<group>"; };
 		AD6D6E2521C51AC900FDC247 /* GlobalButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalButton.swift; sourceTree = "<group>"; };
 		AD6D6E2721C51AE900FDC247 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 		AD5A95D721C52C710043DC79 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AD5A95E421C539410043DC79 /* Menu */,
 				AD5A95D821C52CB60043DC79 /* Home */,
 			);
 			path = Views;
@@ -78,6 +81,14 @@
 				AD5A95DA21C52CC90043DC79 /* HomeViewController.xib */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		AD5A95E421C539410043DC79 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				AD5A95E521C5397D0043DC79 /* MenuViewController.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		AD6D6E2421C51ABC00FDC247 /* Design */ = {
@@ -256,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD5A95DB21C52CC90043DC79 /* HomeViewController.swift in Sources */,
+				AD5A95E621C5397D0043DC79 /* MenuViewController.swift in Sources */,
 				AD6D6E2321C51A7900FDC247 /* UsefulExtensions.swift in Sources */,
 				AD6D6E2821C51AE900FDC247 /* Loader.swift in Sources */,
 				AD6D6E2621C51AC900FDC247 /* GlobalButton.swift in Sources */,
@@ -401,7 +413,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 277BZ5KBNM;
 				INFOPLIST_FILE = iOScape/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.goot.iOScape;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -417,7 +432,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 277BZ5KBNM;
 				INFOPLIST_FILE = iOScape/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.goot.iOScape;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
