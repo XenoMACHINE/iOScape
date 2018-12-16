@@ -34,7 +34,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Configuration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLj-M0-nen">
-                    <rect key="frame" x="78" y="40" width="219" height="43.5"/>
+                    <rect key="frame" x="78" y="35" width="219" height="43.5"/>
                     <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -78,10 +78,10 @@
                 <constraint firstItem="whz-5b-83F" firstAttribute="centerY" secondItem="hxc-5v-7bA" secondAttribute="centerY" constant="-15" id="Xft-FE-gTA"/>
                 <constraint firstItem="GLj-M0-nen" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fJh-bD-P97"/>
                 <constraint firstItem="whz-5b-83F" firstAttribute="width" secondItem="whz-5b-83F" secondAttribute="height" multiplier="1:1" id="fn8-yW-270"/>
-                <constraint firstItem="eUX-fZ-17q" firstAttribute="top" secondItem="GLj-M0-nen" secondAttribute="bottom" constant="10" id="hnG-rh-4M1"/>
+                <constraint firstItem="eUX-fZ-17q" firstAttribute="top" secondItem="GLj-M0-nen" secondAttribute="bottom" constant="15" id="hnG-rh-4M1"/>
                 <constraint firstItem="fN8-8y-Dfz" firstAttribute="top" secondItem="hxc-5v-7bA" secondAttribute="top" id="m99-ee-hoj"/>
                 <constraint firstItem="whz-5b-83F" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qjO-rx-tVf"/>
-                <constraint firstItem="GLj-M0-nen" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="v1s-F8-b9Z"/>
+                <constraint firstItem="GLj-M0-nen" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="v1s-F8-b9Z"/>
                 <constraint firstItem="eUX-fZ-17q" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="vxu-FC-eJg"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
