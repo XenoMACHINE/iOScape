@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,10 +17,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        FirebaseApp.configure()
+        UserManager.shared.initUser()
+        
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = HomeViewController()
+        
+        let home = HomeViewController()
+        
+        if Auth.auth().currentUser == nil {
+            home.addChildViewController(ConnectionViewController())
+        }
+        
+        window.rootViewController = home
+        
         window.makeKeyAndVisible()
         self.window = window
+        
+        //UILabel.appearance().font = UIFont(name: "Marker Felt Thin", size: 14)
         
         return true
     }

@@ -8,6 +8,7 @@
 
 import UIKit
 import RHSideButtons
+import Firebase
 
 class MenuViewController: UIViewController {
     
@@ -17,6 +18,10 @@ class MenuViewController: UIViewController {
     private var sideButtonsView: RHSideButtons?
 
     public var btnImageNames: [String] = ["icon_1","icon_2","icon_3","icon_4"]
+    
+    enum MenuType : Int{
+        case LOGOUT = 3
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +36,7 @@ class MenuViewController: UIViewController {
     }
     
     private func setup(){
+        guard sideButtonsView == nil else { return }
         let triggerButton = RHTriggerButtonView(pressedImage: UIImage(named: "exit_icon")!) {
             $0.image = UIImage(named: "trigger_img")
             $0.hasShadow = true
@@ -51,7 +57,7 @@ class MenuViewController: UIViewController {
     }
     
     private func addButtons(){
-    
+        buttonsArr.removeAll()
         for name in btnImageNames{
             buttonsArr.append(generateButton(withImgName: name))
         }
@@ -74,10 +80,17 @@ extension MenuViewController: RHSideButtonsDataSource {
 extension MenuViewController: RHSideButtonsDelegate {
     
     func sideButtons(_ sideButtons: RHSideButtons, didSelectButtonAtIndex index: Int) {
-        print("🍭 button index tapped: \(index)")
+        guard let menuType = MenuType(rawValue: index) else { return }
+        
+        switch menuType{
+            
+        case .LOGOUT:
+            try? Auth.auth().signOut()
+            self.present(ConnectionViewController(), animated: true)
+        }
     }
     
     func sideButtons(_ sideButtons: RHSideButtons, didTriggerButtonChangeStateTo state: RHButtonState) {
-        print("🍭 Trigger button")
+        
     }
 }

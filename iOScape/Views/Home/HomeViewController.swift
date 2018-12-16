@@ -8,20 +8,24 @@
 
 import UIKit
 import RHSideButtons
+import FirebaseAuth
 
 class HomeViewController: MenuViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkSession()
     }
     
-
+    
+    func checkSession(){
+        if Auth.auth().currentUser == nil {
+            self.present(ConnectionViewController(), animated: true)
+        }
+    }
 }

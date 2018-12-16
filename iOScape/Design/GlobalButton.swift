@@ -17,6 +17,8 @@ class GlobalButton: UIButton {
     override func awakeFromNib() {
         self.layer.cornerRadius = self.bounds.height / 10
         
+        //self.titleLabel?.font = UIFont(name: "Marker Felt", size: 14)
+        
         if activityIndicator == nil {
             activityIndicator = createActivityIndicator()
             self.addSubview(activityIndicator)
