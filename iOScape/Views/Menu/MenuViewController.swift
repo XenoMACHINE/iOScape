@@ -21,6 +21,7 @@ class MenuViewController: UIViewController {
     
     enum MenuType : Int{
         case SCORES = 1
+        case SETTINGS = 2
         case LOGOUT = 3
     }
     
@@ -40,7 +41,6 @@ class MenuViewController: UIViewController {
         guard sideButtonsView == nil else { return }
         let triggerButton = RHTriggerButtonView(pressedImage: UIImage(named: "exit_icon")!) {
             $0.image = UIImage(named: "trigger_img")
-            $0.hasShadow = true
         }
         
         sideButtonsView = RHSideButtons(parentView: view, triggerButton: triggerButton)
@@ -53,7 +53,6 @@ class MenuViewController: UIViewController {
         
         return RHButtonView {
             $0.image = UIImage(named: imgName)
-            $0.hasShadow = true
         }
     }
     
@@ -90,6 +89,8 @@ extension MenuViewController: RHSideButtonsDelegate {
             self.present(ConnectionViewController(), animated: true)
         case .SCORES:
             self.present(ScoresViewController(), animated: true)
+        case .SETTINGS:
+            self.present(SettingsViewController(), animated: true)
         }
     }
     

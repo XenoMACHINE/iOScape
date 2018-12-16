@@ -19,6 +19,11 @@
 		AD5A95FA21C6B6E90043DC79 /* ScoresViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD5A95F821C6B6E90043DC79 /* ScoresViewController.xib */; };
 		AD5A95FE21C6BE830043DC79 /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5A95FC21C6BE830043DC79 /* ScoreTableViewCell.swift */; };
 		AD5A95FF21C6BE830043DC79 /* ScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD5A95FD21C6BE830043DC79 /* ScoreTableViewCell.xib */; };
+		AD5A960421C6EA780043DC79 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD5A960321C6EA780043DC79 /* HomeKit.framework */; };
+		AD5A960821C6EC450043DC79 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5A960621C6EC450043DC79 /* SettingsViewController.swift */; };
+		AD5A960921C6EC450043DC79 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD5A960721C6EC450043DC79 /* SettingsViewController.xib */; };
+		AD5A960C21C6F79D0043DC79 /* AccessoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5A960A21C6F79D0043DC79 /* AccessoryCell.swift */; };
+		AD5A960D21C6F79D0043DC79 /* AccessoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD5A960B21C6F79D0043DC79 /* AccessoryCell.xib */; };
 		AD6D6E2321C51A7900FDC247 /* UsefulExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D6E2221C51A7900FDC247 /* UsefulExtensions.swift */; };
 		AD6D6E2621C51AC900FDC247 /* GlobalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D6E2521C51AC900FDC247 /* GlobalButton.swift */; };
 		AD6D6E2821C51AE900FDC247 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D6E2721C51AE900FDC247 /* Loader.swift */; };
@@ -40,6 +45,12 @@
 		AD5A95F821C6B6E90043DC79 /* ScoresViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoresViewController.xib; sourceTree = "<group>"; };
 		AD5A95FC21C6BE830043DC79 /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
 		AD5A95FD21C6BE830043DC79 /* ScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreTableViewCell.xib; sourceTree = "<group>"; };
+		AD5A960021C6EA730043DC79 /* iOScape.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOScape.entitlements; sourceTree = "<group>"; };
+		AD5A960321C6EA780043DC79 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
+		AD5A960621C6EC450043DC79 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		AD5A960721C6EC450043DC79 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		AD5A960A21C6F79D0043DC79 /* AccessoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryCell.swift; sourceTree = "<group>"; };
+		AD5A960B21C6F79D0043DC79 /* AccessoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccessoryCell.xib; sourceTree = "<group>"; };
 		AD6D6E2221C51A7900FDC247 /* UsefulExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsefulExtensions.swift; sourceTree = "<group>"; };
 		AD6D6E2521C51AC900FDC247 /* GlobalButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalButton.swift; sourceTree = "<group>"; };
 		AD6D6E2721C51AE900FDC247 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
@@ -57,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD5A960421C6EA780043DC79 /* HomeKit.framework in Frameworks */,
 				0C3FFA4793B50ABCF8ED98E7 /* Pods_iOScape.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,6 +79,7 @@
 		5F567AFBD50DB9BCA8F1D60C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD5A960321C6EA780043DC79 /* HomeKit.framework */,
 				C338E841A3A230507284029B /* Pods_iOScape.framework */,
 			);
 			name = Frameworks;
@@ -88,6 +101,7 @@
 				AD5A95EB21C6702E0043DC79 /* Connection */,
 				AD5A95D821C52CB60043DC79 /* Home */,
 				AD5A95F621C6B66E0043DC79 /* Scores */,
+				AD5A960521C6EB0F0043DC79 /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -145,6 +159,17 @@
 			path = Scores;
 			sourceTree = "<group>";
 		};
+		AD5A960521C6EB0F0043DC79 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AD5A960621C6EC450043DC79 /* SettingsViewController.swift */,
+				AD5A960721C6EC450043DC79 /* SettingsViewController.xib */,
+				AD5A960A21C6F79D0043DC79 /* AccessoryCell.swift */,
+				AD5A960B21C6F79D0043DC79 /* AccessoryCell.xib */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		AD6D6E2421C51ABC00FDC247 /* Design */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +200,7 @@
 		ADDBE06121C5166600E7124F /* iOScape */ = {
 			isa = PBXGroup;
 			children = (
+				AD5A960021C6EA730043DC79 /* iOScape.entitlements */,
 				ADDBE06221C5166600E7124F /* AppDelegate.swift */,
 				ADDBE06B21C5166700E7124F /* LaunchScreen.storyboard */,
 				ADDBE06921C5166700E7124F /* Assets.xcassets */,
@@ -222,6 +248,11 @@
 				TargetAttributes = {
 					ADDBE05E21C5166600E7124F = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.HomeKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -251,10 +282,12 @@
 				AD5A95EF21C6704C0043DC79 /* ConnectionViewController.xib in Resources */,
 				ADDBE06D21C5166700E7124F /* LaunchScreen.storyboard in Resources */,
 				AD5A95F521C675A40043DC79 /* GoogleService-Info.plist in Resources */,
+				AD5A960921C6EC450043DC79 /* SettingsViewController.xib in Resources */,
 				ADDBE06A21C5166700E7124F /* Assets.xcassets in Resources */,
 				AD5A95DC21C52CC90043DC79 /* HomeViewController.xib in Resources */,
 				AD5A95FA21C6B6E90043DC79 /* ScoresViewController.xib in Resources */,
 				AD5A95FF21C6BE830043DC79 /* ScoreTableViewCell.xib in Resources */,
+				AD5A960D21C6F79D0043DC79 /* AccessoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +363,7 @@
 			files = (
 				AD5A95FE21C6BE830043DC79 /* ScoreTableViewCell.swift in Sources */,
 				AD5A95DB21C52CC90043DC79 /* HomeViewController.swift in Sources */,
+				AD5A960821C6EC450043DC79 /* SettingsViewController.swift in Sources */,
 				AD5A95EE21C6704C0043DC79 /* ConnectionViewController.swift in Sources */,
 				AD5A95E621C5397D0043DC79 /* MenuViewController.swift in Sources */,
 				AD6D6E2321C51A7900FDC247 /* UsefulExtensions.swift in Sources */,
@@ -337,6 +371,7 @@
 				AD6D6E2821C51AE900FDC247 /* Loader.swift in Sources */,
 				AD6D6E2621C51AC900FDC247 /* GlobalButton.swift in Sources */,
 				AD5A95F221C672AB0043DC79 /* UserManager.swift in Sources */,
+				AD5A960C21C6F79D0043DC79 /* AccessoryCell.swift in Sources */,
 				ADDBE06321C5166600E7124F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,6 +511,7 @@
 			baseConfigurationReference = DB952F84E6316F076D55431B /* Pods-iOScape.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iOScape/iOScape.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 277BZ5KBNM;
 				INFOPLIST_FILE = iOScape/Info.plist;
@@ -495,6 +531,7 @@
 			baseConfigurationReference = 680BC6DF752D4F6F06F216AD /* Pods-iOScape.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iOScape/iOScape.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 277BZ5KBNM;
 				INFOPLIST_FILE = iOScape/Info.plist;
