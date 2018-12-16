@@ -15,6 +15,10 @@
 		AD5A95EF21C6704C0043DC79 /* ConnectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD5A95ED21C6704C0043DC79 /* ConnectionViewController.xib */; };
 		AD5A95F221C672AB0043DC79 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5A95F121C672AB0043DC79 /* UserManager.swift */; };
 		AD5A95F521C675A40043DC79 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD5A95F421C675A40043DC79 /* GoogleService-Info.plist */; };
+		AD5A95F921C6B6E90043DC79 /* ScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5A95F721C6B6E90043DC79 /* ScoresViewController.swift */; };
+		AD5A95FA21C6B6E90043DC79 /* ScoresViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD5A95F821C6B6E90043DC79 /* ScoresViewController.xib */; };
+		AD5A95FE21C6BE830043DC79 /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5A95FC21C6BE830043DC79 /* ScoreTableViewCell.swift */; };
+		AD5A95FF21C6BE830043DC79 /* ScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD5A95FD21C6BE830043DC79 /* ScoreTableViewCell.xib */; };
 		AD6D6E2321C51A7900FDC247 /* UsefulExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D6E2221C51A7900FDC247 /* UsefulExtensions.swift */; };
 		AD6D6E2621C51AC900FDC247 /* GlobalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D6E2521C51AC900FDC247 /* GlobalButton.swift */; };
 		AD6D6E2821C51AE900FDC247 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D6E2721C51AE900FDC247 /* Loader.swift */; };
@@ -32,6 +36,10 @@
 		AD5A95ED21C6704C0043DC79 /* ConnectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectionViewController.xib; sourceTree = "<group>"; };
 		AD5A95F121C672AB0043DC79 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		AD5A95F421C675A40043DC79 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AD5A95F721C6B6E90043DC79 /* ScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresViewController.swift; sourceTree = "<group>"; };
+		AD5A95F821C6B6E90043DC79 /* ScoresViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoresViewController.xib; sourceTree = "<group>"; };
+		AD5A95FC21C6BE830043DC79 /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
+		AD5A95FD21C6BE830043DC79 /* ScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreTableViewCell.xib; sourceTree = "<group>"; };
 		AD6D6E2221C51A7900FDC247 /* UsefulExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsefulExtensions.swift; sourceTree = "<group>"; };
 		AD6D6E2521C51AC900FDC247 /* GlobalButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalButton.swift; sourceTree = "<group>"; };
 		AD6D6E2721C51AE900FDC247 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
@@ -79,6 +87,7 @@
 				AD5A95E421C539410043DC79 /* Menu */,
 				AD5A95EB21C6702E0043DC79 /* Connection */,
 				AD5A95D821C52CB60043DC79 /* Home */,
+				AD5A95F621C6B66E0043DC79 /* Scores */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -123,6 +132,17 @@
 				AD5A95F421C675A40043DC79 /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AD5A95F621C6B66E0043DC79 /* Scores */ = {
+			isa = PBXGroup;
+			children = (
+				AD5A95F721C6B6E90043DC79 /* ScoresViewController.swift */,
+				AD5A95F821C6B6E90043DC79 /* ScoresViewController.xib */,
+				AD5A95FC21C6BE830043DC79 /* ScoreTableViewCell.swift */,
+				AD5A95FD21C6BE830043DC79 /* ScoreTableViewCell.xib */,
+			);
+			path = Scores;
 			sourceTree = "<group>";
 		};
 		AD6D6E2421C51ABC00FDC247 /* Design */ = {
@@ -233,6 +253,8 @@
 				AD5A95F521C675A40043DC79 /* GoogleService-Info.plist in Resources */,
 				ADDBE06A21C5166700E7124F /* Assets.xcassets in Resources */,
 				AD5A95DC21C52CC90043DC79 /* HomeViewController.xib in Resources */,
+				AD5A95FA21C6B6E90043DC79 /* ScoresViewController.xib in Resources */,
+				AD5A95FF21C6BE830043DC79 /* ScoreTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,10 +328,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD5A95FE21C6BE830043DC79 /* ScoreTableViewCell.swift in Sources */,
 				AD5A95DB21C52CC90043DC79 /* HomeViewController.swift in Sources */,
 				AD5A95EE21C6704C0043DC79 /* ConnectionViewController.swift in Sources */,
 				AD5A95E621C5397D0043DC79 /* MenuViewController.swift in Sources */,
 				AD6D6E2321C51A7900FDC247 /* UsefulExtensions.swift in Sources */,
+				AD5A95F921C6B6E90043DC79 /* ScoresViewController.swift in Sources */,
 				AD6D6E2821C51AE900FDC247 /* Loader.swift in Sources */,
 				AD6D6E2621C51AC900FDC247 /* GlobalButton.swift in Sources */,
 				AD5A95F221C672AB0043DC79 /* UserManager.swift in Sources */,

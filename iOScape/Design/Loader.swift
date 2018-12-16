@@ -15,7 +15,7 @@ class Loader {
     var size : CGFloat = 50.0
     var moveX : CGFloat = 0
     var moveY : CGFloat = 0
-    var type = NVActivityIndicatorType.ballRotateChase
+    var type = NVActivityIndicatorType.ballPulse
     var color = UIColor.white
 
     init(moveX : CGFloat = 0, moveY : CGFloat = 0, size : CGFloat = 50){
@@ -43,8 +43,8 @@ class Loader {
         view.addSubview(loader!)
         
         loader?.translatesAutoresizingMaskIntoConstraints = false
-        let horizontalConstraint = NSLayoutConstraint(item: loader!, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1, constant: 0)
-        let verticalConstraint = NSLayoutConstraint(item: loader!, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1, constant: 0)
+        let horizontalConstraint = NSLayoutConstraint(item: loader!, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: moveX)
+        let verticalConstraint = NSLayoutConstraint(item: loader!, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: moveY)
         view.addConstraints([horizontalConstraint, verticalConstraint])
     }
     

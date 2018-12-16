@@ -20,6 +20,7 @@ class MenuViewController: UIViewController {
     public var btnImageNames: [String] = ["icon_1","icon_2","icon_3","icon_4"]
     
     enum MenuType : Int{
+        case SCORES = 1
         case LOGOUT = 3
     }
     
@@ -87,6 +88,8 @@ extension MenuViewController: RHSideButtonsDelegate {
         case .LOGOUT:
             try? Auth.auth().signOut()
             self.present(ConnectionViewController(), animated: true)
+        case .SCORES:
+            self.present(ScoresViewController(), animated: true)
         }
     }
     

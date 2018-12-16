@@ -23,13 +23,21 @@
                 <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="escape1" translatesAutoresizingMaskIntoConstraints="NO" id="qzO-qS-pv3">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="702"/>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fU-m4-sCk">
+                    <rect key="frame" x="106" y="120" width="163.5" height="43.5"/>
+                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
             <constraints>
                 <constraint firstItem="qzO-qS-pv3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ShM-H3-WxP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qzO-qS-pv3" secondAttribute="trailing" id="Xgz-BY-4GF"/>
                 <constraint firstItem="qzO-qS-pv3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="b1b-sq-zqK"/>
+                <constraint firstItem="4fU-m4-sCk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="maw-TO-sgt"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="qzO-qS-pv3" secondAttribute="bottom" constant="-35" id="oTZ-il-5Na"/>
+                <constraint firstItem="4fU-m4-sCk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="wQB-cS-5M0"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>

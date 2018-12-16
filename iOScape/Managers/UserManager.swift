@@ -33,8 +33,7 @@ class UserManager: NSObject {
     func createUser(){
         guard let id = self.userId else { return }
         let data : [String:Any] =  ["email" : email,
-                                    "id" : id,
-                                    "score" : 0]
+                                    "id" : id]
         db.collection("users").document(id).setData(data)
     }
 }
