@@ -32,6 +32,9 @@
 		AD5A962621C7042E0043DC79 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5A962521C7042E0043DC79 /* NotificationController.swift */; };
 		AD5A962821C7042E0043DC79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD5A962721C7042E0043DC79 /* Assets.xcassets */; };
 		AD5A962D21C7042E0043DC79 /* iOScape WatchKit.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AD5A961021C7042C0043DC79 /* iOScape WatchKit.app */; };
+		AD5A963921C706020043DC79 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5A963721C706020043DC79 /* GameViewController.swift */; };
+		AD5A963A21C706020043DC79 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD5A963821C706020043DC79 /* GameViewController.xib */; };
+		AD5A963C21C7082B0043DC79 /* WatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5A963B21C7082B0043DC79 /* WatchManager.swift */; };
 		AD6D6E2321C51A7900FDC247 /* UsefulExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D6E2221C51A7900FDC247 /* UsefulExtensions.swift */; };
 		AD6D6E2621C51AC900FDC247 /* GlobalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D6E2521C51AC900FDC247 /* GlobalButton.swift */; };
 		AD6D6E2821C51AE900FDC247 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D6E2721C51AE900FDC247 /* Loader.swift */; };
@@ -112,6 +115,9 @@
 		AD5A962721C7042E0043DC79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD5A962921C7042E0043DC79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD5A962A21C7042E0043DC79 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		AD5A963721C706020043DC79 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		AD5A963821C706020043DC79 /* GameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
+		AD5A963B21C7082B0043DC79 /* WatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchManager.swift; sourceTree = "<group>"; };
 		AD6D6E2221C51A7900FDC247 /* UsefulExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsefulExtensions.swift; sourceTree = "<group>"; };
 		AD6D6E2521C51AC900FDC247 /* GlobalButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalButton.swift; sourceTree = "<group>"; };
 		AD6D6E2721C51AE900FDC247 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
@@ -168,6 +174,7 @@
 				AD5A95E421C539410043DC79 /* Menu */,
 				AD5A95EB21C6702E0043DC79 /* Connection */,
 				AD5A95D821C52CB60043DC79 /* Home */,
+				AD5A963621C705EE0043DC79 /* Game */,
 				AD5A95F621C6B66E0043DC79 /* Scores */,
 				AD5A960521C6EB0F0043DC79 /* Settings */,
 			);
@@ -204,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				AD5A95F121C672AB0043DC79 /* UserManager.swift */,
+				AD5A963B21C7082B0043DC79 /* WatchManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -259,6 +267,15 @@
 				AD5A962A21C7042E0043DC79 /* PushNotificationPayload.apns */,
 			);
 			path = "iOScape WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		AD5A963621C705EE0043DC79 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				AD5A963721C706020043DC79 /* GameViewController.swift */,
+				AD5A963821C706020043DC79 /* GameViewController.xib */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 		AD6D6E2421C51ABC00FDC247 /* Design */ = {
@@ -439,6 +456,7 @@
 				ADDBE06D21C5166700E7124F /* LaunchScreen.storyboard in Resources */,
 				AD5A95F521C675A40043DC79 /* GoogleService-Info.plist in Resources */,
 				AD5A960921C6EC450043DC79 /* SettingsViewController.xib in Resources */,
+				AD5A963A21C706020043DC79 /* GameViewController.xib in Resources */,
 				ADDBE06A21C5166700E7124F /* Assets.xcassets in Resources */,
 				AD5A95DC21C52CC90043DC79 /* HomeViewController.xib in Resources */,
 				AD5A95FA21C6B6E90043DC79 /* ScoresViewController.xib in Resources */,
@@ -531,12 +549,14 @@
 				AD5A95DB21C52CC90043DC79 /* HomeViewController.swift in Sources */,
 				AD5A960821C6EC450043DC79 /* SettingsViewController.swift in Sources */,
 				AD5A95EE21C6704C0043DC79 /* ConnectionViewController.swift in Sources */,
+				AD5A963921C706020043DC79 /* GameViewController.swift in Sources */,
 				AD5A95E621C5397D0043DC79 /* MenuViewController.swift in Sources */,
 				AD6D6E2321C51A7900FDC247 /* UsefulExtensions.swift in Sources */,
 				AD5A95F921C6B6E90043DC79 /* ScoresViewController.swift in Sources */,
 				AD6D6E2821C51AE900FDC247 /* Loader.swift in Sources */,
 				AD6D6E2621C51AC900FDC247 /* GlobalButton.swift in Sources */,
 				AD5A95F221C672AB0043DC79 /* UserManager.swift in Sources */,
+				AD5A963C21C7082B0043DC79 /* WatchManager.swift in Sources */,
 				AD5A960C21C6F79D0043DC79 /* AccessoryCell.swift in Sources */,
 				ADDBE06321C5166600E7124F /* AppDelegate.swift in Sources */,
 			);

@@ -18,6 +18,9 @@
                             <fontDescription key="font" type="italicSystem" weight="thin" pointSize="16"/>
                         </label>
                     </items>
+                    <connections>
+                        <outlet property="statusLabel" destination="lvL-iQ-0lF" id="bsf-Xj-9M6"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>

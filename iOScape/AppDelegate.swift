@@ -18,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         FirebaseApp.configure()
+        
         UserManager.shared.initUser()
+        WatchManager.shared.connect()
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         
