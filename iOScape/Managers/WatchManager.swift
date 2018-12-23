@@ -13,8 +13,14 @@ class WatchManager: NSObject {
     
     static let shared = WatchManager()
 
-    var connected = false
+    enum AppStatus : Int{
+        case CLOSE = 0
+        case OPEN = 1
+        case IN_GAME = 2
+    }
     
+    var currentStatus : AppStatus = .OPEN
+    var watchConnected = false
     var session : WCSession?
     
     func connect(){
@@ -25,10 +31,9 @@ class WatchManager: NSObject {
         }
     }
     
-    func startGame(){
-        session?.sendMessage(["New game":0], replyHandler: nil, errorHandler: { (err) in
-            
-        })
+    func sendAppStatus(_ appStatus : AppStatus){
+        currentStatus = appStatus
+        session?.sendMessage(["AppStatus" : appStatus.rawValue], replyHandler: nil, errorHandler: { (err) in })
     }
 }
 
@@ -48,7 +53,8 @@ extension WatchManager : WCSessionDelegate {
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         print(message)
         if message["Watch"] as? String == "OK"{
-            connected = true
+            watchConnected = true
+            sendAppStatus(currentStatus)
         }
     }
 }

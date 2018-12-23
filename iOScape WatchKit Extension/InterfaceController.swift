@@ -12,10 +12,19 @@ import WatchConnectivity
 
 class InterfaceController: WKInterfaceController {
 
+    enum AppStatus : Int{
+        case CLOSE = 0
+        case OPEN = 1
+        case IN_GAME = 2
+    }
+    
     @IBOutlet weak var statusLabel: WKInterfaceLabel!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        
+        print("cooucou")
+        crownSequencer.delegate = self
         
         if WCSession.isSupported(){
             let session = WCSession.default
@@ -32,6 +41,10 @@ class InterfaceController: WKInterfaceController {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+    }
+    
+    override func didAppear() {
+        crownSequencer.focus()
     }
 
 }
@@ -52,7 +65,22 @@ extension InterfaceController : WCSessionDelegate{
     }
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        print(message)
-        self.statusLabel.setText(message.first?.key)
+        if let appStatusMessage = message["AppStatus"] as? Int, let appStatus = AppStatus(rawValue: appStatusMessage){
+            switch appStatus{
+            case .OPEN:
+                self.statusLabel.setText("App open")
+            case .CLOSE:
+                self.statusLabel.setText("App close")
+            case .IN_GAME:
+                self.statusLabel.setText("In game")
+            }
+        }
+    }
+}
+
+extension InterfaceController : WKCrownDelegate {
+    
+    func crownDidRotate(_ crownSequencer: WKCrownSequencer?, rotationalDelta: Double) {
+        print(rotationalDelta)
     }
 }

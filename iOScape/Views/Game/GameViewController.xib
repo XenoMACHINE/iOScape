@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameViewController" customModule="iOScape" customModuleProvider="target">
             <connections>
+                <outlet property="chronoLabel" destination="0n4-oc-S6G" id="eTp-XI-4Hh"/>
+                <outlet property="locksStackView" destination="gNj-Jn-79v" id="qoE-as-X4C"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="watchStatusLabel" destination="1ss-YP-MyA" id="i1g-sH-HWT"/>
             </connections>
@@ -21,7 +23,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egu-uL-j4m" customClass="GlobalButton" customModule="ScanRun" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egu-uL-j4m" customClass="GlobalButton" customModule="iOScape" customModuleProvider="target">
                     <rect key="frame" x="15" y="602" width="345" height="50"/>
                     <color key="backgroundColor" red="0.031372549020000001" green="0.2666666667" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
@@ -46,16 +48,65 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gNj-Jn-79v">
+                    <rect key="frame" x="50" y="102" width="275" height="30"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="5EW-cJ-82y">
+                            <rect key="frame" x="0.0" y="0.0" width="91.5" height="30"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="CPR-SA-aNM">
+                            <rect key="frame" x="91.5" y="0.0" width="92" height="30"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="pfz-2B-QH5">
+                            <rect key="frame" x="183.5" y="0.0" width="91.5" height="30"/>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="nK9-lR-R7Y"/>
+                    </constraints>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FRd-wR-Tem" userLabel="ChronoView">
+                    <rect key="frame" x="50" y="35" width="275" height="55"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 : 00 : 00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0n4-oc-S6G">
+                            <rect key="frame" x="88.5" y="16.5" width="98" height="22"/>
+                            <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="0n4-oc-S6G" firstAttribute="centerX" secondItem="FRd-wR-Tem" secondAttribute="centerX" id="H3D-LW-ERl"/>
+                        <constraint firstItem="0n4-oc-S6G" firstAttribute="centerY" secondItem="FRd-wR-Tem" secondAttribute="centerY" id="U2r-y3-5eN"/>
+                        <constraint firstAttribute="height" constant="55" id="xIh-b3-56Q"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
             <constraints>
                 <constraint firstItem="1ss-YP-MyA" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="3R6-0Q-vIu"/>
+                <constraint firstItem="FRd-wR-Tem" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="BaK-e8-Yn1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="egu-uL-j4m" secondAttribute="bottom" constant="15" id="KyV-Zu-sd8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FRd-wR-Tem" secondAttribute="trailing" constant="50" id="OQc-dw-v2e"/>
+                <constraint firstItem="FRd-wR-Tem" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="Ohc-li-IeI"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="egu-uL-j4m" secondAttribute="trailing" constant="15" id="Pil-ic-MCM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gNj-Jn-79v" secondAttribute="trailing" constant="50" id="XaM-gw-ehr"/>
                 <constraint firstItem="1ss-YP-MyA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mC9-Iz-q13"/>
+                <constraint firstItem="gNj-Jn-79v" firstAttribute="top" secondItem="FRd-wR-Tem" secondAttribute="bottom" constant="12" id="pNh-FM-6je"/>
+                <constraint firstItem="gNj-Jn-79v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="pfW-dP-BD0"/>
                 <constraint firstItem="egu-uL-j4m" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="tA2-Xx-ydM"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
         </view>
     </objects>
+    <resources>
+        <image name="lock" width="192" height="192"/>
+    </resources>
 </document>

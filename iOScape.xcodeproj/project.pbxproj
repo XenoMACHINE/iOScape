@@ -41,6 +41,7 @@
 		ADDBE06321C5166600E7124F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBE06221C5166600E7124F /* AppDelegate.swift */; };
 		ADDBE06A21C5166700E7124F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADDBE06921C5166700E7124F /* Assets.xcassets */; };
 		ADDBE06D21C5166700E7124F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADDBE06B21C5166700E7124F /* LaunchScreen.storyboard */; };
+		ADEE476821D0098400B851EE /* HomeKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEE476721D0098400B851EE /* HomeKitManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		ADDBE06921C5166700E7124F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADDBE06C21C5166700E7124F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADDBE06E21C5166700E7124F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADEE476721D0098400B851EE /* HomeKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitManager.swift; sourceTree = "<group>"; };
 		C338E841A3A230507284029B /* Pods_iOScape.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOScape.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB952F84E6316F076D55431B /* Pods-iOScape.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOScape.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOScape/Pods-iOScape.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -212,6 +214,7 @@
 			children = (
 				AD5A95F121C672AB0043DC79 /* UserManager.swift */,
 				AD5A963B21C7082B0043DC79 /* WatchManager.swift */,
+				ADEE476721D0098400B851EE /* HomeKitManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				AD6D6E2821C51AE900FDC247 /* Loader.swift in Sources */,
 				AD6D6E2621C51AC900FDC247 /* GlobalButton.swift in Sources */,
 				AD5A95F221C672AB0043DC79 /* UserManager.swift in Sources */,
+				ADEE476821D0098400B851EE /* HomeKitManager.swift in Sources */,
 				AD5A963C21C7082B0043DC79 /* WatchManager.swift in Sources */,
 				AD5A960C21C6F79D0043DC79 /* AccessoryCell.swift in Sources */,
 				ADDBE06321C5166600E7124F /* AppDelegate.swift in Sources */,

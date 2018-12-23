@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RHSideButtons
 import FirebaseAuth
 
 class HomeViewController: MenuViewController {

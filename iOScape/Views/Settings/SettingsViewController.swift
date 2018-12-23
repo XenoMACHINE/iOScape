@@ -25,20 +25,13 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    var escapeHome : HMHome? {
-        didSet{
-            setAccessories()
-            accessoryBrowser.startSearchingForNewAccessories()
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initTableview()
-        
-        homeManager.delegate = self
         accessoryBrowser.delegate = self
+        accessoryBrowser.startSearchingForNewAccessories()
+        setAccessories()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,30 +52,12 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    //Manage home
-    func checkEscapeHome(){
-        for home in homeManager.homes{
-            if home.name.contains(STARTUP_NAME){
-                self.escapeHome = home
-                return
-            }
-        }
-        createEscapeHome()
-    }
-
-    func createEscapeHome(){
-        self.homeManager.addHome(withName: "\(STARTUP_NAME) Home", completionHandler: { (home, err) in
-            self.escapeHome = home
-        })
-    }
-    
     //Manage Accessories
     func setAccessories(){
-        let connectedAccessories = (escapeHome?.accessories ?? []).map({ ($0, true) })
+        let connectedAccessories = (HomeKitManager.shared.escapeHome?.accessories ?? []).map({ ($0, true) })
         self.allAccessories.append(contentsOf: connectedAccessories)
         self.sortAccessories()
     }
-    
     
     //Animation
     func addSearchAnimation(){
@@ -120,13 +95,6 @@ class SettingsViewController: UIViewController {
     
 }
 
-extension SettingsViewController : HMHomeManagerDelegate{
-    
-    func homeManagerDidUpdateHomes(_ manager: HMHomeManager) {
-        checkEscapeHome()
-    }
-}
-
 extension SettingsViewController : HMAccessoryBrowserDelegate{
     
     func accessoryBrowser(_ browser: HMAccessoryBrowser, didFindNewAccessory accessory: HMAccessory) {
@@ -162,7 +130,7 @@ extension SettingsViewController : UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = allAccessories[indexPath.row]
         
-        escapeHome?.addAccessory(item.accessory, completionHandler: { (err) in
+        HomeKitManager.shared.escapeHome?.addAccessory(item.accessory, completionHandler: { (err) in
             guard err == nil else { return }
             self.allAccessories.insert((item.accessory, true), at: 0)
         })
