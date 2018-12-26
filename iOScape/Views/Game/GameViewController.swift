@@ -92,17 +92,19 @@ class GameViewController: UIViewController {
     }
     
     func setImage(visible : Bool){
-        if visible {
-            self.imageCenterXConstraint.constant = -self.view.frame.width
-            self.view.layoutIfNeeded()
-            UIView.animate(withDuration: 0.5) {
-                self.imageCenterXConstraint.constant = 0
+        DispatchQueue.main.async {
+            if visible {
+                self.imageCenterXConstraint.constant = -self.view.frame.width
                 self.view.layoutIfNeeded()
-            }
-        }else{
-            UIView.animate(withDuration: 1) {
-                self.imageCenterXConstraint.constant = self.view.frame.width
-                self.view.layoutIfNeeded()
+                UIView.animate(withDuration: 0.5) {
+                    self.imageCenterXConstraint.constant = 0
+                    self.view.layoutIfNeeded()
+                }
+            }else{
+                UIView.animate(withDuration: 1) {
+                    self.imageCenterXConstraint.constant = self.view.frame.width
+                    self.view.layoutIfNeeded()
+                }
             }
         }
     }
