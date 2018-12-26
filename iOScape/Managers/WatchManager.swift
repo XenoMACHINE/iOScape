@@ -9,6 +9,21 @@
 import Foundation
 import WatchConnectivity
 
+protocol WatchCrownDelegate : class {
+    func didRotate(value : Double)
+}
+
+protocol WatchSwipeDelegate : class {
+    func didSwipe(direction : SwipeDirection)
+}
+
+enum SwipeDirection : Int{
+    case TOP = 0
+    case RIGHT = 1
+    case BOTTOM = 2
+    case LEFT = 3
+}
+
 class WatchManager: NSObject {
     
     static let shared = WatchManager()
@@ -19,6 +34,9 @@ class WatchManager: NSObject {
         case IN_GAME = 2
     }
     
+    var watchCrownDelegate : WatchCrownDelegate?
+    var watchSwipeDelegate : WatchSwipeDelegate?
+
     var currentStatus : AppStatus = .OPEN
     var watchConnected = false
     var session : WCSession?
@@ -35,6 +53,7 @@ class WatchManager: NSObject {
         currentStatus = appStatus
         session?.sendMessage(["AppStatus" : appStatus.rawValue], replyHandler: nil, errorHandler: { (err) in })
     }
+    
 }
 
 extension WatchManager : WCSessionDelegate {
@@ -51,10 +70,18 @@ extension WatchManager : WCSessionDelegate {
     }
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        print(message)
+        //print(message)
         if message["Watch"] as? String == "OK"{
             watchConnected = true
             sendAppStatus(currentStatus)
+        }
+        
+        if let rotationalDelta = message["rotationalDelta"] as? Double {
+            watchCrownDelegate?.didRotate(value: rotationalDelta)
+        }
+        
+        if let swipe = message["swipe"] as? Int, let swipeDirection = SwipeDirection(rawValue: swipe) {
+            watchSwipeDelegate?.didSwipe(direction: swipeDirection)
         }
     }
 }

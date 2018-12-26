@@ -14,9 +14,20 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="iOScape_WatchKit" customModuleProvider="target">
                     <items>
-                        <label alignment="center" verticalAlignment="center" text="En l'attente d'une partie ..." textAlignment="center" numberOfLines="0" id="lvL-iQ-0lF">
-                            <fontDescription key="font" type="italicSystem" weight="thin" pointSize="16"/>
-                        </label>
+                        <group width="1" height="1" alignment="left" id="EhM-Uv-ghH">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="En l'attente d'une partie ..." textAlignment="center" numberOfLines="0" id="lvL-iQ-0lF">
+                                    <fontDescription key="font" type="italicSystem" weight="thin" pointSize="16"/>
+                                </label>
+                            </items>
+                            <gestureRecognizers>
+                                <swipeGestureRecognizer id="Dl2-bb-9rR">
+                                    <connections>
+                                        <action selector="onSwipeRight:" destination="AgC-eL-Hgc" id="E4H-Z8-mKi"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
+                            </gestureRecognizers>
+                        </group>
                     </items>
                     <connections>
                         <outlet property="statusLabel" destination="lvL-iQ-0lF" id="bsf-Xj-9M6"/>
