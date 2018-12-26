@@ -16,7 +16,7 @@
                     <items>
                         <group width="1" height="1" alignment="left" id="EhM-Uv-ghH">
                             <items>
-                                <label alignment="center" verticalAlignment="center" text="En l'attente d'une partie ..." textAlignment="center" numberOfLines="0" id="lvL-iQ-0lF">
+                                <label alignment="center" verticalAlignment="center" text="Ouvrez l'application iOScape" textAlignment="center" numberOfLines="0" id="lvL-iQ-0lF">
                                     <fontDescription key="font" type="italicSystem" weight="thin" pointSize="16"/>
                                 </label>
                             </items>

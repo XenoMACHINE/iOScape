@@ -54,6 +54,10 @@ class WatchManager: NSObject {
         session?.sendMessage(["AppStatus" : appStatus.rawValue], replyHandler: nil, errorHandler: { (err) in })
     }
     
+    func sendWatchMessage(_ message : String){
+        session?.sendMessage(["gameMessage" : message], replyHandler: nil, errorHandler: { (err) in })
+    }
+    
 }
 
 extension WatchManager : WCSessionDelegate {

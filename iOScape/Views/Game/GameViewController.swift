@@ -15,6 +15,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var chronoLabel: UILabel!
     @IBOutlet weak var locksStackView: UIStackView!
     @IBOutlet weak var vaultImg: UIImageView!
+    @IBOutlet weak var imageCenterXConstraint: NSLayoutConstraint!
+    
+    let MAX_ROTATE_VALUE : CGFloat = 5
     
     var enigmaSolved = 0
     var time = 0
@@ -64,6 +67,9 @@ class GameViewController: UIViewController {
             let sec = String(format: "%02d", formattedTime.sec)
 
             self.chronoLabel.text = "\(hours) : \(min) : \(sec)"
+            if self.chronoLabel.text == "00 : 00 : 03" {
+                WatchManager.shared.sendWatchMessage("L'heure tourne ...")
+            }
         }
     }
     
@@ -85,6 +91,22 @@ class GameViewController: UIViewController {
         }
     }
     
+    func setImage(visible : Bool){
+        if visible {
+            self.imageCenterXConstraint.constant = -self.view.frame.width
+            self.view.layoutIfNeeded()
+            UIView.animate(withDuration: 0.5) {
+                self.imageCenterXConstraint.constant = 0
+                self.view.layoutIfNeeded()
+            }
+        }else{
+            UIView.animate(withDuration: 1) {
+                self.imageCenterXConstraint.constant = self.view.frame.width
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    
     @IBAction func onClose(_ sender: Any) {
         self.dismiss(animated: true)
     }
@@ -93,12 +115,23 @@ class GameViewController: UIViewController {
 extension GameViewController : WatchCrownDelegate{
     func didRotate(value: Double) {
         guard enigmaSolved == 0 else { return }
-        if value > 0 { //avance
-            if rotateValue < 10 { turnVault(value: CGFloat(value)) } //max 10
-            else { AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate)) }
+        
+        if value >= 0 { //avance
+            if rotateValue < MAX_ROTATE_VALUE { turnVault(value: CGFloat(value)) } //max
+            else {
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                WatchManager.shared.sendWatchMessage("Ça bloque ici, tu y es presque !")
+            }
         }else{ // recule
-            if rotateValue > 0 { turnVault(value: CGFloat(value)) } //min 0
-            else { AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate)) }
+            if rotateValue > 0 { turnVault(value: CGFloat(value)) } //min
+            else {
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                WatchManager.shared.sendWatchMessage("Merci, la porte est bien fermée !")
+            }
+        }
+        
+        if rotateValue > 0 && rotateValue < MAX_ROTATE_VALUE - 1 {
+            WatchManager.shared.sendWatchMessage("On dirait que ça bouge !")
         }
     }
 }
@@ -110,7 +143,9 @@ extension GameViewController : WatchSwipeDelegate {
         case .TOP:
             break
         case .RIGHT:
-            if enigmaSolved == 0 && rotateValue >= 10 {
+            if enigmaSolved == 0 && rotateValue >= MAX_ROTATE_VALUE {
+                self.setImage(visible: false)
+                WatchManager.shared.sendWatchMessage("Super ! Tu viens de d'ouvrir la porte")
                 enigmaSolved = 1
                 openNextLock()
             }

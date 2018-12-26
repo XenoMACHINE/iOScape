@@ -30,6 +30,12 @@ class InterfaceController: WKInterfaceController {
     let session = WCSession.default
     var temp = 0
     
+    var gameMessage = "La partie commence..." {
+        didSet{
+            self.statusLabel.setText(gameMessage)
+        }
+    }
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -66,12 +72,16 @@ extension InterfaceController : WCSessionDelegate{
         if let appStatusMessage = message["AppStatus"] as? Int, let appStatus = AppStatus(rawValue: appStatusMessage){
             switch appStatus{
             case .OPEN:
-                self.statusLabel.setText("App open")
+                self.statusLabel.setText("En l'attente d'une partie ...")
             case .CLOSE:
-                self.statusLabel.setText("App close")
+                self.statusLabel.setText("Ouvrez l'application iOScape")
             case .IN_GAME:
-                self.statusLabel.setText("In game")
+                gameMessage = "La partie commence !"
             }
+        }
+        
+        if let gameVCMessage = message["gameMessage"] as? String{
+            gameMessage = gameVCMessage
         }
     }
 }

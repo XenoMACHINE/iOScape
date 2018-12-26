@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameViewController" customModule="iOScape" customModuleProvider="target">
             <connections>
                 <outlet property="chronoLabel" destination="0n4-oc-S6G" id="eTp-XI-4Hh"/>
+                <outlet property="imageCenterXConstraint" destination="Fr5-3F-OQd" id="xyC-23-9oD"/>
                 <outlet property="locksStackView" destination="gNj-Jn-79v" id="qoE-as-X4C"/>
                 <outlet property="vaultImg" destination="bpV-44-s9H" id="WaH-Lz-6vg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -24,6 +25,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="escape1" translatesAutoresizingMaskIntoConstraints="NO" id="h7e-bl-IrH">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egu-uL-j4m" customClass="GlobalButton" customModule="iOScape" customModuleProvider="target">
                     <rect key="frame" x="15" y="797" width="384" height="50"/>
                     <color key="backgroundColor" red="0.031372549020000001" green="0.2666666667" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -67,13 +71,13 @@
                     </constraints>
                 </stackView>
                 <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="fZN-yq-S9S">
-                    <rect key="frame" x="15" y="199" width="384" height="578"/>
+                    <rect key="frame" x="14.333333333333343" y="199" width="385.33333333333326" height="578"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="entireDoor" translatesAutoresizingMaskIntoConstraints="NO" id="p3V-L8-d5n">
-                            <rect key="frame" x="0.0" y="0.0" width="384" height="578"/>
+                            <rect key="frame" x="0.0" y="0.0" width="385.33333333333331" height="578"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault" translatesAutoresizingMaskIntoConstraints="NO" id="bpV-44-s9H">
-                            <rect key="frame" x="139" y="241" width="106" height="106"/>
+                            <rect key="frame" x="139.66666666666666" y="241" width="106" height="106"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="106" id="fDc-c2-N1c"/>
                                 <constraint firstAttribute="width" secondItem="bpV-44-s9H" secondAttribute="height" multiplier="1:1" id="oi0-gq-3Gr"/>
@@ -115,8 +119,10 @@
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="h7e-bl-IrH" secondAttribute="trailing" id="2tq-Ga-Aoi"/>
                 <constraint firstItem="1ss-YP-MyA" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="3R6-0Q-vIu"/>
                 <constraint firstItem="FRd-wR-Tem" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="BaK-e8-Yn1"/>
+                <constraint firstItem="fZN-yq-S9S" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Fr5-3F-OQd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="egu-uL-j4m" secondAttribute="bottom" constant="15" id="KyV-Zu-sd8"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FRd-wR-Tem" secondAttribute="trailing" constant="50" id="OQc-dw-v2e"/>
                 <constraint firstItem="FRd-wR-Tem" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="Ohc-li-IeI"/>
@@ -124,19 +130,22 @@
                 <constraint firstItem="egu-uL-j4m" firstAttribute="top" secondItem="fZN-yq-S9S" secondAttribute="bottom" constant="20" id="RAr-op-hBW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gNj-Jn-79v" secondAttribute="trailing" constant="50" id="XaM-gw-ehr"/>
                 <constraint firstItem="fZN-yq-S9S" firstAttribute="top" secondItem="gNj-Jn-79v" secondAttribute="bottom" constant="20" id="Zqt-Wc-frZ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fZN-yq-S9S" secondAttribute="trailing" constant="15" id="jCk-74-kMW"/>
-                <constraint firstItem="fZN-yq-S9S" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="kMr-Ss-oLy"/>
+                <constraint firstItem="h7e-bl-IrH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bZr-YO-x7g"/>
+                <constraint firstAttribute="bottom" secondItem="h7e-bl-IrH" secondAttribute="bottom" id="chL-Zf-zNK"/>
                 <constraint firstItem="1ss-YP-MyA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mC9-Iz-q13"/>
+                <constraint firstItem="fZN-yq-S9S" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.93" id="mc3-St-tLW"/>
                 <constraint firstItem="gNj-Jn-79v" firstAttribute="top" secondItem="FRd-wR-Tem" secondAttribute="bottom" constant="20" id="pNh-FM-6je"/>
                 <constraint firstItem="gNj-Jn-79v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="pfW-dP-BD0"/>
                 <constraint firstItem="egu-uL-j4m" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="tA2-Xx-ydM"/>
+                <constraint firstItem="h7e-bl-IrH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="tJW-TE-LzW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
+            <point key="canvasLocation" x="52.173913043478265" y="47.544642857142854"/>
         </view>
     </objects>
     <resources>
         <image name="entireDoor" width="1790" height="1756"/>
+        <image name="escape1" width="675" height="1200"/>
         <image name="lock" width="192" height="192"/>
         <image name="vault" width="106.08000183105469" height="106.08000183105469"/>
     </resources>
