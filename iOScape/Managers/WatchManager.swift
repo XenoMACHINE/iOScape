@@ -15,6 +15,7 @@ protocol WatchCrownDelegate : class {
 
 protocol WatchSwipeDelegate : class {
     func didSwipe(direction : SwipeDirection)
+    func didTap()
 }
 
 enum SwipeDirection : Int{
@@ -86,6 +87,10 @@ extension WatchManager : WCSessionDelegate {
         
         if let swipe = message["swipe"] as? Int, let swipeDirection = SwipeDirection(rawValue: swipe) {
             watchSwipeDelegate?.didSwipe(direction: swipeDirection)
+        }
+        
+        if message["tap"] as? Int == 1 {
+            watchSwipeDelegate?.didTap()
         }
     }
 }

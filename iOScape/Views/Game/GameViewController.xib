@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameViewController" customModule="iOScape" customModuleProvider="target">
             <connections>
                 <outlet property="chronoLabel" destination="0n4-oc-S6G" id="eTp-XI-4Hh"/>
+                <outlet property="gameImage" destination="p3V-L8-d5n" id="3kY-On-L9a"/>
                 <outlet property="imageCenterXConstraint" destination="Fr5-3F-OQd" id="xyC-23-9oD"/>
                 <outlet property="locksStackView" destination="gNj-Jn-79v" id="qoE-as-X4C"/>
                 <outlet property="vaultImg" destination="bpV-44-s9H" id="WaH-Lz-6vg"/>

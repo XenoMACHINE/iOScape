@@ -14,16 +14,24 @@ class GameViewController: UIViewController {
     @IBOutlet weak var watchStatusLabel: UILabel!
     @IBOutlet weak var chronoLabel: UILabel!
     @IBOutlet weak var locksStackView: UIStackView!
+    @IBOutlet weak var gameImage: UIImageView!
     @IBOutlet weak var vaultImg: UIImageView!
     @IBOutlet weak var imageCenterXConstraint: NSLayoutConstraint!
     
     let MAX_ROTATE_VALUE : CGFloat = 5
     
-    var enigmaSolved = 0
+    var enigmaSolved = 0 {
+        didSet{
+            if enigmaSolved == 1 { initSecondEnigma() }
+            if enigmaSolved == 2 { initThirdEnigma() }
+            openNextLock()
+        }
+    }
     var time = 0
     var gameTimer : Timer?
     
     var rotateValue : CGFloat = 0
+    var nbTap = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +53,21 @@ class GameViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         WatchManager.shared.sendAppStatus(.OPEN)
         gameTimer?.invalidate()
+    }
+    
+    func initSecondEnigma(){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+                WatchManager.shared.sendWatchMessage("Ne t'énèrve pas :)")
+            }
+            self.gameImage.image = UIImage(named: "brokenglass0")
+            self.vaultImg.isHidden = true
+            self.setImage(visible: true)
+        }
+    }
+    
+    func initThirdEnigma(){
+        
     }
     
     func turnVault(value : CGFloat = 0.25){
@@ -109,6 +132,31 @@ class GameViewController: UIViewController {
         }
     }
     
+    func soundVibrateNotif(){
+        AudioServicesPlaySystemSound(1017)
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+    }
+    
+    func solveFirstEnigma(){
+        self.soundVibrateNotif()
+        self.setImage(visible: false)
+        WatchManager.shared.sendWatchMessage("Super ! Tu viens de d'ouvrir la porte")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            WatchManager.shared.sendWatchMessage("Voyons la suite ...")
+        }
+        enigmaSolved = 1
+    }
+    
+    func solveSecondEnigma(){
+        self.soundVibrateNotif()
+        self.setImage(visible: false)
+        WatchManager.shared.sendWatchMessage("Bien joué ! J'espère que la montre fonctionne encore ...")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            WatchManager.shared.sendWatchMessage("Ce n'est pas fini !")
+        }
+        enigmaSolved = 2
+    }
+    
     @IBAction func onClose(_ sender: Any) {
         self.dismiss(animated: true)
     }
@@ -121,13 +169,11 @@ extension GameViewController : WatchCrownDelegate{
         if value >= 0 { //avance
             if rotateValue < MAX_ROTATE_VALUE { turnVault(value: CGFloat(value)) } //max
             else {
-                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                 WatchManager.shared.sendWatchMessage("Ça bloque ici, tu y es presque !")
             }
         }else{ // recule
             if rotateValue > 0 { turnVault(value: CGFloat(value)) } //min
             else {
-                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                 WatchManager.shared.sendWatchMessage("Merci, la porte est bien fermée !")
             }
         }
@@ -138,7 +184,6 @@ extension GameViewController : WatchCrownDelegate{
     }
 }
 
-
 extension GameViewController : WatchSwipeDelegate {
     func didSwipe(direction: SwipeDirection) {
         switch direction{
@@ -146,15 +191,27 @@ extension GameViewController : WatchSwipeDelegate {
             break
         case .RIGHT:
             if enigmaSolved == 0 && rotateValue >= MAX_ROTATE_VALUE {
-                self.setImage(visible: false)
-                WatchManager.shared.sendWatchMessage("Super ! Tu viens de d'ouvrir la porte")
-                enigmaSolved = 1
-                openNextLock()
+                solveFirstEnigma()
+            }
+            if enigmaSolved == 1 && nbTap >= 9 {
+                solveSecondEnigma()
             }
         case .BOTTOM:
             break
         case .LEFT:
             break
+        }
+    }
+    
+    func didTap() {
+        guard enigmaSolved == 1 else { return }
+        nbTap += 1
+        nbTap = nbTap > 9 ? 9 : nbTap
+        DispatchQueue.main.sync {
+            self.gameImage.image = UIImage(named: "brokenglass\(nbTap)")
+        }
+        if nbTap >= 9 {
+            WatchManager.shared.sendWatchMessage("Ça suffit !")
         }
     }
 }

@@ -26,6 +26,11 @@
                                         <action selector="onSwipeRight:" destination="AgC-eL-Hgc" id="E4H-Z8-mKi"/>
                                     </connections>
                                 </swipeGestureRecognizer>
+                                <tapGestureRecognizer id="q2N-Ko-JE3">
+                                    <connections>
+                                        <action selector="onTapGesture:" destination="AgC-eL-Hgc" id="8e3-Yx-VBd"/>
+                                    </connections>
+                                </tapGestureRecognizer>
                             </gestureRecognizers>
                         </group>
                     </items>

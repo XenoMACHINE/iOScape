@@ -51,6 +51,10 @@ class InterfaceController: WKInterfaceController {
         crownSequencer.focus()
     }
     
+    @IBAction func onTapGesture(_ sender: Any) {
+        session.sendMessage(["tap": 1], replyHandler: nil) { (_) in }
+    }
+    
     @IBAction func onSwipeRight(_ sender: Any) {
         session.sendMessage(["swipe": SwipeDirection.RIGHT.rawValue], replyHandler: nil) { (_) in }
     }
