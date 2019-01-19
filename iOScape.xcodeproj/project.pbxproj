@@ -38,6 +38,8 @@
 		AD6D6E2321C51A7900FDC247 /* UsefulExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D6E2221C51A7900FDC247 /* UsefulExtensions.swift */; };
 		AD6D6E2621C51AC900FDC247 /* GlobalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D6E2521C51AC900FDC247 /* GlobalButton.swift */; };
 		AD6D6E2821C51AE900FDC247 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D6E2721C51AE900FDC247 /* Loader.swift */; };
+		ADD1BC6C21F36873000FC5E5 /* KeyboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1BC6B21F36873000FC5E5 /* KeyboardController.swift */; };
+		ADD1BC6E21F36CCA000FC5E5 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1BC6D21F36CCA000FC5E5 /* SessionManager.swift */; };
 		ADDBE06321C5166600E7124F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBE06221C5166600E7124F /* AppDelegate.swift */; };
 		ADDBE06A21C5166700E7124F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADDBE06921C5166700E7124F /* Assets.xcassets */; };
 		ADDBE06D21C5166700E7124F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADDBE06B21C5166700E7124F /* LaunchScreen.storyboard */; };
@@ -122,6 +124,8 @@
 		AD6D6E2221C51A7900FDC247 /* UsefulExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsefulExtensions.swift; sourceTree = "<group>"; };
 		AD6D6E2521C51AC900FDC247 /* GlobalButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalButton.swift; sourceTree = "<group>"; };
 		AD6D6E2721C51AE900FDC247 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		ADD1BC6B21F36873000FC5E5 /* KeyboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardController.swift; sourceTree = "<group>"; };
+		ADD1BC6D21F36CCA000FC5E5 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		ADDBE05F21C5166600E7124F /* iOScape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOScape.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDBE06221C5166600E7124F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADDBE06921C5166700E7124F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -262,10 +266,12 @@
 		AD5A962021C7042E0043DC79 /* iOScape WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				ADD1BC6D21F36CCA000FC5E5 /* SessionManager.swift */,
 				AD5A962121C7042E0043DC79 /* InterfaceController.swift */,
+				ADD1BC6B21F36873000FC5E5 /* KeyboardController.swift */,
+				AD5A962721C7042E0043DC79 /* Assets.xcassets */,
 				AD5A962321C7042E0043DC79 /* ExtensionDelegate.swift */,
 				AD5A962521C7042E0043DC79 /* NotificationController.swift */,
-				AD5A962721C7042E0043DC79 /* Assets.xcassets */,
 				AD5A962921C7042E0043DC79 /* Info.plist */,
 				AD5A962A21C7042E0043DC79 /* PushNotificationPayload.apns */,
 			);
@@ -538,8 +544,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADD1BC6C21F36873000FC5E5 /* KeyboardController.swift in Sources */,
 				AD5A962621C7042E0043DC79 /* NotificationController.swift in Sources */,
 				AD5A962421C7042E0043DC79 /* ExtensionDelegate.swift in Sources */,
+				ADD1BC6E21F36CCA000FC5E5 /* SessionManager.swift in Sources */,
 				AD5A962221C7042E0043DC79 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

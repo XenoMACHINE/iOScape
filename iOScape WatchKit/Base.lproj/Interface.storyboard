@@ -14,9 +14,9 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="iOScape_WatchKit" customModuleProvider="target">
                     <items>
-                        <group width="1" height="1" alignment="left" id="EhM-Uv-ghH">
+                        <group width="1" height="0.90000000000000002" alignment="left" id="EhM-Uv-ghH">
                             <items>
-                                <label alignment="center" verticalAlignment="center" text="Ouvrez l'application iOScape" textAlignment="center" numberOfLines="0" id="lvL-iQ-0lF">
+                                <label height="0.69999999999999996" alignment="center" verticalAlignment="center" text="Ouvrez l'application iOScape" textAlignment="center" numberOfLines="0" id="lvL-iQ-0lF">
                                     <fontDescription key="font" type="italicSystem" weight="thin" pointSize="16"/>
                                 </label>
                             </items>
@@ -33,6 +33,14 @@
                                 </tapGestureRecognizer>
                             </gestureRecognizers>
                         </group>
+                        <button width="0.29999999999999999" height="0.10000000000000001" alignment="right" verticalAlignment="center" title="..." id="DOW-On-kIk">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="system" weight="light" pointSize="9"/>
+                            <connections>
+                                <segue destination="Ybj-Ma-aF2" kind="push" id="hdD-sp-qO0"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
                         <outlet property="statusLabel" destination="lvL-iQ-0lF" id="bsf-Xj-9M6"/>
@@ -40,6 +48,88 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Keyboard Controller-->
+        <scene sceneID="dQA-wF-FMA">
+            <objects>
+                <controller id="Ybj-Ma-aF2" customClass="KeyboardController" customModule="iOScape_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="0.25" alignment="left" id="o5e-kZ-5nB">
+                            <items>
+                                <button width="0.33000000000000002" height="1" alignment="left" title="1" id="rRb-32-CpE">
+                                    <connections>
+                                        <action selector="click1" destination="Ybj-Ma-aF2" id="YiO-qR-S4J"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="1" alignment="left" title="2" id="BLA-Ua-liY">
+                                    <connections>
+                                        <action selector="click2" destination="Ybj-Ma-aF2" id="yh6-Fe-zB9"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="1" alignment="left" title="3" id="lKT-nu-Kqq">
+                                    <connections>
+                                        <action selector="click3" destination="Ybj-Ma-aF2" id="iSs-Yu-WSP"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="0.25" alignment="left" id="Ald-Zm-KAM">
+                            <items>
+                                <button width="0.33000000000000002" height="1" alignment="left" title="4" id="4rt-oT-bKO">
+                                    <connections>
+                                        <action selector="click4" destination="Ybj-Ma-aF2" id="93e-tG-ndA"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="1" alignment="left" title="5" id="QUa-FM-7Ih">
+                                    <connections>
+                                        <action selector="click5" destination="Ybj-Ma-aF2" id="nt0-Tb-jy0"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="1" alignment="left" title="6" id="j09-2Z-pYa">
+                                    <connections>
+                                        <action selector="click6" destination="Ybj-Ma-aF2" id="F4x-T1-iO7"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="35" alignment="left" id="DKK-x2-f4x">
+                            <items>
+                                <button width="0.33000000000000002" height="1" alignment="left" title="7" id="39n-Aa-Cwc">
+                                    <connections>
+                                        <action selector="click7" destination="Ybj-Ma-aF2" id="CzO-oq-wVb"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="1" alignment="left" title="8" id="Md4-M7-4Tb">
+                                    <connections>
+                                        <action selector="click8" destination="Ybj-Ma-aF2" id="fS2-Tj-3yC"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="1" alignment="left" title="9" id="Xlf-nH-idY">
+                                    <connections>
+                                        <action selector="click9" destination="Ybj-Ma-aF2" id="K7T-VM-AQ3"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="0.25" alignment="left" id="kSf-4V-na6">
+                            <items>
+                                <button width="0.33000000000000002" height="1" alignment="left" title="0" id="TeA-IS-h4j">
+                                    <connections>
+                                        <action selector="click0" destination="Ybj-Ma-aF2" id="NMC-du-vGk"/>
+                                    </connections>
+                                </button>
+                                <button width="0.67000000000000004" height="1" alignment="left" title="Valider" id="XMQ-Bi-MLs">
+                                    <fontDescription key="font" type="system" pointSize="10"/>
+                                    <connections>
+                                        <action selector="onValidate" destination="Ybj-Ma-aF2" id="W0r-Oa-knA"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="490" y="344.5"/>
         </scene>
     </scenes>
 </document>
