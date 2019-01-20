@@ -10,21 +10,19 @@ import WatchKit
 
 class KeyboardController: WKInterfaceController {
     
-    var entireCode = ""
-    
     func onClick(figure : Int){
-        entireCode += "\(figure)"
+        SessionManager.shared.sendNoReplyMessage(message: ["colorCode" : figure])
     }
-    
     
     //IBACTIONS
-    
     @IBAction func onValidate() {
-        print(entireCode)
-        entireCode = ""
+        SessionManager.shared.sendNoReplyMessage(message: ["colorCode" : "valid"])
     }
     
-    @IBAction func click0() { onClick(figure: 0) }
+    @IBAction func onSuppr() {
+        SessionManager.shared.sendNoReplyMessage(message: ["colorCode" : "clear"])
+    }
+    
     @IBAction func click1() { onClick(figure: 1) }
     @IBAction func click2() { onClick(figure: 2) }
     @IBAction func click3() { onClick(figure: 3) }

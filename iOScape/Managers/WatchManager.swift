@@ -1,4 +1,4 @@
-//
+ //
 //  WatchManager.swift
 //  iOScape
 //
@@ -18,6 +18,12 @@ protocol WatchSwipeDelegate : class {
     func didTap()
 }
 
+protocol WatchKeyboardDelegate : class {
+    func didTap(figure : Int)
+    func didValidate()
+    func didClear()
+}
+
 enum SwipeDirection : Int{
     case TOP = 0
     case RIGHT = 1
@@ -35,8 +41,9 @@ class WatchManager: NSObject {
         case IN_GAME = 2
     }
     
-    var watchCrownDelegate : WatchCrownDelegate?
-    var watchSwipeDelegate : WatchSwipeDelegate?
+    weak var watchCrownDelegate : WatchCrownDelegate?
+    weak var watchSwipeDelegate : WatchSwipeDelegate?
+    weak var watchKeyboardDelegate : WatchKeyboardDelegate?
 
     var currentStatus : AppStatus = .OPEN
     var watchConnected = false
@@ -91,6 +98,18 @@ extension WatchManager : WCSessionDelegate {
         
         if message["tap"] as? Int == 1 {
             watchSwipeDelegate?.didTap()
+        }
+        
+        if let figure = message["colorCode"] as? Int {
+            watchKeyboardDelegate?.didTap(figure: figure)
+        }
+        
+        if message["colorCode"] as? String == "valid"{
+            watchKeyboardDelegate?.didValidate()
+        }
+        
+        if message["colorCode"] as? String == "clear"{
+            watchKeyboardDelegate?.didClear()
         }
     }
 }

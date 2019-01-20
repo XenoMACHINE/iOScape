@@ -40,6 +40,8 @@
 		AD6D6E2821C51AE900FDC247 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D6E2721C51AE900FDC247 /* Loader.swift */; };
 		ADD1BC6C21F36873000FC5E5 /* KeyboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1BC6B21F36873000FC5E5 /* KeyboardController.swift */; };
 		ADD1BC6E21F36CCA000FC5E5 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1BC6D21F36CCA000FC5E5 /* SessionManager.swift */; };
+		ADD1BC7121F4A73D000FC5E5 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD1BC6F21F4A73D000FC5E5 /* ColorCollectionViewCell.swift */; };
+		ADD1BC7221F4A73D000FC5E5 /* ColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADD1BC7021F4A73D000FC5E5 /* ColorCollectionViewCell.xib */; };
 		ADDBE06321C5166600E7124F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBE06221C5166600E7124F /* AppDelegate.swift */; };
 		ADDBE06A21C5166700E7124F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADDBE06921C5166700E7124F /* Assets.xcassets */; };
 		ADDBE06D21C5166700E7124F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADDBE06B21C5166700E7124F /* LaunchScreen.storyboard */; };
@@ -126,6 +128,8 @@
 		AD6D6E2721C51AE900FDC247 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		ADD1BC6B21F36873000FC5E5 /* KeyboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardController.swift; sourceTree = "<group>"; };
 		ADD1BC6D21F36CCA000FC5E5 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		ADD1BC6F21F4A73D000FC5E5 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
+		ADD1BC7021F4A73D000FC5E5 /* ColorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorCollectionViewCell.xib; sourceTree = "<group>"; };
 		ADDBE05F21C5166600E7124F /* iOScape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOScape.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDBE06221C5166600E7124F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADDBE06921C5166700E7124F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -283,6 +287,8 @@
 			children = (
 				AD5A963721C706020043DC79 /* GameViewController.swift */,
 				AD5A963821C706020043DC79 /* GameViewController.xib */,
+				ADD1BC6F21F4A73D000FC5E5 /* ColorCollectionViewCell.swift */,
+				ADD1BC7021F4A73D000FC5E5 /* ColorCollectionViewCell.xib */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -461,6 +467,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADD1BC7221F4A73D000FC5E5 /* ColorCollectionViewCell.xib in Resources */,
 				AD5A95EF21C6704C0043DC79 /* ConnectionViewController.xib in Resources */,
 				ADDBE06D21C5166700E7124F /* LaunchScreen.storyboard in Resources */,
 				AD5A95F521C675A40043DC79 /* GoogleService-Info.plist in Resources */,
@@ -570,6 +577,7 @@
 				ADEE476821D0098400B851EE /* HomeKitManager.swift in Sources */,
 				AD5A963C21C7082B0043DC79 /* WatchManager.swift in Sources */,
 				AD5A960C21C6F79D0043DC79 /* AccessoryCell.swift in Sources */,
+				ADD1BC7121F4A73D000FC5E5 /* ColorCollectionViewCell.swift in Sources */,
 				ADDBE06321C5166600E7124F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

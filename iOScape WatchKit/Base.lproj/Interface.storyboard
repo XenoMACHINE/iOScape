@@ -57,16 +57,19 @@
                         <group width="1" height="0.25" alignment="left" id="o5e-kZ-5nB">
                             <items>
                                 <button width="0.33000000000000002" height="1" alignment="left" title="1" id="rRb-32-CpE">
+                                    <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
                                         <action selector="click1" destination="Ybj-Ma-aF2" id="YiO-qR-S4J"/>
                                     </connections>
                                 </button>
                                 <button width="0.33000000000000002" height="1" alignment="left" title="2" id="BLA-Ua-liY">
+                                    <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
                                         <action selector="click2" destination="Ybj-Ma-aF2" id="yh6-Fe-zB9"/>
                                     </connections>
                                 </button>
                                 <button width="0.33000000000000002" height="1" alignment="left" title="3" id="lKT-nu-Kqq">
+                                    <color key="backgroundColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
                                         <action selector="click3" destination="Ybj-Ma-aF2" id="iSs-Yu-WSP"/>
                                     </connections>
@@ -76,16 +79,20 @@
                         <group width="1" height="0.25" alignment="left" id="Ald-Zm-KAM">
                             <items>
                                 <button width="0.33000000000000002" height="1" alignment="left" title="4" id="4rt-oT-bKO">
+                                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
                                         <action selector="click4" destination="Ybj-Ma-aF2" id="93e-tG-ndA"/>
                                     </connections>
                                 </button>
                                 <button width="0.33000000000000002" height="1" alignment="left" title="5" id="QUa-FM-7Ih">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
                                         <action selector="click5" destination="Ybj-Ma-aF2" id="nt0-Tb-jy0"/>
                                     </connections>
                                 </button>
                                 <button width="0.33000000000000002" height="1" alignment="left" title="6" id="j09-2Z-pYa">
+                                    <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
                                         <action selector="click6" destination="Ybj-Ma-aF2" id="F4x-T1-iO7"/>
                                     </connections>
@@ -95,16 +102,21 @@
                         <group width="1" height="35" alignment="left" id="DKK-x2-f4x">
                             <items>
                                 <button width="0.33000000000000002" height="1" alignment="left" title="7" id="39n-Aa-Cwc">
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <connections>
                                         <action selector="click7" destination="Ybj-Ma-aF2" id="CzO-oq-wVb"/>
                                     </connections>
                                 </button>
                                 <button width="0.33000000000000002" height="1" alignment="left" title="8" id="Md4-M7-4Tb">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
                                         <action selector="click8" destination="Ybj-Ma-aF2" id="fS2-Tj-3yC"/>
                                     </connections>
                                 </button>
                                 <button width="0.33000000000000002" height="1" alignment="left" title="9" id="Xlf-nH-idY">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
                                         <action selector="click9" destination="Ybj-Ma-aF2" id="K7T-VM-AQ3"/>
                                     </connections>
@@ -113,9 +125,10 @@
                         </group>
                         <group width="1" height="0.25" alignment="left" id="kSf-4V-na6">
                             <items>
-                                <button width="0.33000000000000002" height="1" alignment="left" title="0" id="TeA-IS-h4j">
+                                <button width="0.33000000000000002" height="1" alignment="left" title="suppr." id="TeA-IS-h4j">
+                                    <fontDescription key="font" type="system" pointSize="10"/>
                                     <connections>
-                                        <action selector="click0" destination="Ybj-Ma-aF2" id="NMC-du-vGk"/>
+                                        <action selector="onSuppr" destination="Ybj-Ma-aF2" id="xQk-rO-qep"/>
                                     </connections>
                                 </button>
                                 <button width="0.67000000000000004" height="1" alignment="left" title="Valider" id="XMQ-Bi-MLs">
