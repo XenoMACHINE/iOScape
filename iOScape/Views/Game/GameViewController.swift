@@ -8,6 +8,7 @@
 
 import UIKit
 import AudioToolbox
+import FirebaseFirestore
 
 class GameViewController: UIViewController {
 
@@ -39,11 +40,14 @@ class GameViewController: UIViewController {
             openNextLock()
         }
     }
+    
     var time = 0
     var gameTimer : Timer?
     
     var rotateValue : CGFloat = 0
     var nbTap = 0
+    
+    lazy var db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +67,6 @@ class GameViewController: UIViewController {
         colorsCollectionView.dataSource = self
         colorsCollectionView.delegate = self
         colorsCollectionView.register(UINib(nibName: "ColorCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ColorCollectionViewCell")
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,8 +79,12 @@ class GameViewController: UIViewController {
     }
     
     func endGame(){
+        guard let userId = UserManager.shared.userId else { return }
+
+        gameTimer?.invalidate()
+        self.db.collection("users").document(userId).updateData(["scores":FieldValue.arrayUnion([self.time])])
+
         let quitGameAction = UIAlertAction(title: "Quitter la partie", style: .cancel) { (action) in
-            //TODO Note score
             self.dismiss(animated: true)
         }
         self.showAlert(title: "Félicitation !", message: "Tu as réussi toute les épreuves, tu peux sortir maintenant !", actions: [quitGameAction], style: .alert)
@@ -86,7 +93,7 @@ class GameViewController: UIViewController {
     func initSecondEnigma(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                WatchManager.shared.sendWatchMessage("Ne t'énèrve pas :)")
+                WatchManager.shared.sendWatchMessage("Ne t'énèrves surtout pas !")
             }
             self.gameImage.image = UIImage(named: "brokenglass0")
             self.vaultImg.isHidden = true
@@ -210,8 +217,8 @@ class GameViewController: UIViewController {
     func clearCodeTextfield(animated: Bool){
         DispatchQueue.main.sync {
             let animation = CABasicAnimation(keyPath: "position")
-            animation.duration = 0.07
-            animation.repeatCount = 4
+            animation.duration = 0.06
+            animation.repeatCount = 10
             animation.autoreverses = true
             animation.fromValue = NSValue(cgPoint: CGPoint(x: self.colorCodeTextfield.center.x - 10, y: self.colorCodeTextfield.center.y))
             animation.toValue = NSValue(cgPoint: CGPoint(x: self.colorCodeTextfield.center.x + 10, y: self.colorCodeTextfield.center.y))

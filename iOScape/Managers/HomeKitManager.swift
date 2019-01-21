@@ -18,12 +18,18 @@ class HomeKitManager : NSObject {
     static let shared = HomeKitManager()
     
     private let STARTUP_NAME = "iOScape"
+    private let NB_LOCK = 3
+
     private let homeManager = HMHomeManager()
     
     var escapeHome : HMHome?
 
     func load(){
         homeManager.delegate = self
+    }
+    
+    func isAllLocksConnected() -> Bool {
+        return HomeKitManager.shared.escapeHome?.accessories.count == NB_LOCK
     }
     
     func getLocksStatus() -> [LockStatus]{

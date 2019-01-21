@@ -86,6 +86,13 @@ extension MenuViewController: RHSideButtonsDelegate {
         switch menuType{
             
         case .GAME:
+            if !HomeKitManager.shared.isAllLocksConnected() {
+                let goToScoreAction = UIAlertAction(title: "Ajouter les serrures", style: .default) { (action) in
+                    self.present(SettingsViewController(), animated: true)
+                }
+                UIApplication.topViewController()?.showAlert(title: "Sérrure connecté manquante", message: "Veuillez connecter toutes les sérrures", actions: [goToScoreAction])
+                return
+            }
             self.present(GameViewController(), animated: true)
         case .SCORES:
             self.present(ScoresViewController(), animated: true)
