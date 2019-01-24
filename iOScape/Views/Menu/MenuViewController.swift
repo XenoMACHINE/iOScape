@@ -28,7 +28,6 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,7 +89,7 @@ extension MenuViewController: RHSideButtonsDelegate {
                 let goToScoreAction = UIAlertAction(title: "Ajouter les serrures", style: .default) { (action) in
                     self.present(SettingsViewController(), animated: true)
                 }
-                UIApplication.topViewController()?.showAlert(title: "Sérrure connecté manquante", message: "Veuillez connecter toutes les sérrures", actions: [goToScoreAction])
+                UIApplication.topViewController()?.showAlert(title: "Serrure connectée manquante", message: "Veuillez connecter toutes les serrures", actions: [goToScoreAction])
                 return
             }
             self.present(GameViewController(), animated: true)

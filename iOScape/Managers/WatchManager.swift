@@ -13,7 +13,7 @@ protocol WatchCrownDelegate : class {
     func didRotate(value : Double)
 }
 
-protocol WatchSwipeDelegate : class {
+protocol WatchGestureDelegate : class {
     func didSwipe(direction : SwipeDirection)
     func didTap()
 }
@@ -42,7 +42,7 @@ class WatchManager: NSObject {
     }
     
     weak var watchCrownDelegate : WatchCrownDelegate?
-    weak var watchSwipeDelegate : WatchSwipeDelegate?
+    weak var watchSwipeDelegate : WatchGestureDelegate?
     weak var watchKeyboardDelegate : WatchKeyboardDelegate?
 
     var currentStatus : AppStatus = .OPEN
@@ -82,7 +82,7 @@ extension WatchManager : WCSessionDelegate {
     }
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        //print(message)
+        
         if message["Watch"] as? String == "OK"{
             watchConnected = true
             sendAppStatus(currentStatus)

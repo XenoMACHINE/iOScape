@@ -13,14 +13,12 @@ class HomeViewController: MenuViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         checkSession()
     }
-    
     
     func checkSession(){
         if Auth.auth().currentUser == nil {

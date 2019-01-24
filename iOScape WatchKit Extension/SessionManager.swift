@@ -41,14 +41,9 @@ class SessionManager: NSObject {
 
 extension SessionManager : WCSessionDelegate{
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        print("Watch OK \(activationState)")
         guard session.isReachable else { return }
         let message : [String : Any] = ["Watch":"OK"]
-        session.sendMessage(message, replyHandler: nil) { (_) in }
-    }
-    
-    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
-        print(userInfo)
+        self.sendNoReplyMessage(message: message)
     }
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {

@@ -64,14 +64,14 @@ class SettingsViewController: UIViewController {
         guard let indexPath = tableView.indexPathForRow(at: touchPoint), gestureRecognizer.state == .began,
             allAccessories[indexPath.row].connected else { return }
         
-        let disconnectAction = UIAlertAction(title: "Déconnecter la sérrure", style: .default) { (action) in
+        let disconnectAction = UIAlertAction(title: "Déconnecter la serrure", style: .default) { (action) in
             HomeKitManager.shared.escapeHome?.removeAccessory(self.allAccessories[indexPath.row].accessory, completionHandler: { (err) in
                 guard err == nil else { return }
                 self.allAccessories.remove(at: indexPath.row)
             })
         }
         let cancelAction = UIAlertAction(title: "Annuler", style: .cancel, handler: nil)
-        self.showAlert(title: "Déconnecter \(allAccessories[indexPath.row].accessory.name)", message: "Êtes vous sûr de vouloir déconnecter la sérrure ?", actions: [disconnectAction, cancelAction])
+        self.showAlert(title: "Déconnecter \(allAccessories[indexPath.row].accessory.name)", message: "Êtes vous sûr de vouloir déconnecter la serrure ?", actions: [disconnectAction, cancelAction])
     }
     
     //Manage Accessories

@@ -12,7 +12,6 @@ import FirebaseFirestore
 
 class GameViewController: UIViewController {
 
-    @IBOutlet weak var watchStatusLabel: UILabel!
     @IBOutlet weak var chronoLabel: UILabel!
     @IBOutlet weak var locksStackView: UIStackView!
     @IBOutlet weak var gameImage: UIImageView!
@@ -24,7 +23,7 @@ class GameViewController: UIViewController {
     let MAX_ROTATE_VALUE : CGFloat = 5
     
     var colors = [UIColor.green, UIColor.cyan, UIColor.lightGray, UIColor.brown, UIColor.yellow, UIColor.orange, UIColor.magenta, UIColor.blue, UIColor.red]
-    var colorCode = "13965"
+    var colorCode = "00000"
     
     var selectedColorIndex = -1 {
         didSet {
@@ -54,9 +53,6 @@ class GameViewController: UIViewController {
         
         HomeKitManager.shared.lockAll()
         launchChrono()
-        if WatchManager.shared.watchConnected{
-            watchStatusLabel.text = "montre appairée"
-        }
         
         WatchManager.shared.watchCrownDelegate = self
         WatchManager.shared.watchSwipeDelegate = self
@@ -257,13 +253,15 @@ extension GameViewController : WatchCrownDelegate{
         guard enigmaSolved == 0 else { return }
         
         if value >= 0 { //avance
-            if rotateValue < MAX_ROTATE_VALUE { turnVault(value: CGFloat(value)) } //max
-            else {
+            if rotateValue < MAX_ROTATE_VALUE {
+                turnVault(value: CGFloat(value))
+            } else { //max
                 WatchManager.shared.sendWatchMessage("Ça bloque ici, tu y es presque !")
             }
         }else{ // recule
-            if rotateValue > 0 { turnVault(value: CGFloat(value)) } //min
-            else {
+            if rotateValue > 0 {
+                turnVault(value: CGFloat(value))
+            } else { //min
                 WatchManager.shared.sendWatchMessage("Merci, la porte est bien fermée !")
             }
         }
@@ -274,7 +272,7 @@ extension GameViewController : WatchCrownDelegate{
     }
 }
 
-extension GameViewController : WatchSwipeDelegate {
+extension GameViewController : WatchGestureDelegate {
     func didSwipe(direction: SwipeDirection) {
         switch direction{
         case .TOP:

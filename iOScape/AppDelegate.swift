@@ -26,10 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let home = HomeViewController()
         
-        if Auth.auth().currentUser == nil {
-            home.addChildViewController(ConnectionViewController())
-        }
-        
         window.rootViewController = home
         
         window.makeKeyAndVisible()

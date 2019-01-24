@@ -27,7 +27,6 @@ class ScoresViewController: UIViewController {
         tableview.dataSource = self
         tableview.register(UINib(nibName: "ScoreTableViewCell", bundle: nil), forCellReuseIdentifier: "ScoreCell")
         tableview.separatorStyle = .none
-        tableview.tableFooterView = UIView()
         tableview.allowsSelection = false
         
         getScore()
